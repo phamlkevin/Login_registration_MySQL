@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HOME</title>
+    </head>
+    <body>
+        <h1>Login Pleasez</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              {{message}}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        
+        <form action ="/login", method="post">
+          <p>First Name<input type='text' name= 'first_name' id='first_name'></p>
+          <p>Last Name<input type='text' name= 'last_name' id='last_name'></p>
+          <p>Email<input type='text' name= 'email' id='email'></p>
+          <p>Password<input type='text' name= 'password' id='password'></p>
+          <p><input type='submit' value='login'></p>
+        </form>
+
+
+        <h1>Register Please</h1>
+    
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      {{message}}
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+        <form action ="/register", method="post">
+          <p>First Name<input type='text' name= 'first_name' id='first_name'></p>
+          <p>Last Name<input type='text' name= 'last_name' id='last_name'></p>
+          <p>Email<input type='text' name= 'email' id='email'></p>
+          <p>Password<input type='text' name= 'password' id='password'></p>
+          <p>Confirm Password<input type='text' name= 'confirm_password' id='confirm_password'></p>
+          <p><input type='submit' value='Register'></p>
+        </form>
+    </body>
+</html>
